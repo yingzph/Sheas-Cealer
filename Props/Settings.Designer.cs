@@ -12,7 +12,7 @@ namespace Sheas_Cealer.Props {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.12.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.13.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -61,6 +61,18 @@ namespace Sheas_Cealer.Props {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("244, 67, 54")]
+        public global::System.Drawing.Color PrimaryColor {
+            get {
+                return ((global::System.Drawing.Color)(this["PrimaryColor"]));
+            }
+            set {
+                this["PrimaryColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("-1")]
         public sbyte IsLightTheme {
             get {
@@ -85,18 +97,6 @@ namespace Sheas_Cealer.Props {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
-        public global::System.Drawing.Color PrimaryColor {
-            get {
-                return ((global::System.Drawing.Color)(this["PrimaryColor"]));
-            }
-            set {
-                this["PrimaryColor"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("-1")]
         public sbyte IsLightWeight {
             get {
@@ -104,6 +104,18 @@ namespace Sheas_Cealer.Props {
             }
             set {
                 this["IsLightWeight"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsUpgradeRequired {
+            get {
+                return ((bool)(this["IsUpgradeRequired"]));
+            }
+            set {
+                this["IsUpgradeRequired"] = value;
             }
         }
     }

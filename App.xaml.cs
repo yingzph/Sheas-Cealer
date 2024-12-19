@@ -1,13 +1,13 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Media;
-using System.Windows.Threading;
-using MaterialDesignThemes.Wpf;
+﻿using MaterialDesignThemes.Wpf;
 using Sheas_Cealer.Preses;
 using Sheas_Cealer.Props;
 using Sheas_Cealer.Utils;
 using Sheas_Cealer.Wins;
+using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Threading;
 
 namespace Sheas_Cealer;
 
@@ -15,12 +15,21 @@ public partial class App : Application
 {
     protected override void OnStartup(StartupEventArgs e)
     {
+        #region Upgrade Settings
+        if (Settings.Default.IsUpgradeRequired)
+        {
+            Settings.Default.Upgrade();
+            Settings.Default.IsUpgradeRequired = false;
+            Settings.Default.Save();
+        }
+        #endregion Upgrade Settings
+
         #region Primary Color
         PaletteHelper paletteHelper = new();
         Theme newTheme = paletteHelper.GetTheme();
-        System.Drawing.Color newPrimaryColor = Settings.Default.PrimaryColor;
+        Color newPrimaryColor = Color.FromRgb(Settings.Default.PrimaryColor.R, Settings.Default.PrimaryColor.G, Settings.Default.PrimaryColor.B);
 
-        newTheme.SetPrimaryColor(Color.FromRgb(newPrimaryColor.R, newPrimaryColor.G, newPrimaryColor.B));
+        newTheme.SetPrimaryColor(newPrimaryColor);
         paletteHelper.SetTheme(newTheme);
         #endregion Primary Color
 
@@ -44,7 +53,7 @@ public partial class App : Application
         new SettingsPres().AccentForegroundColor = newAccentForegroundColor;
         #endregion Foreground Color
 
-        new MainWin(e.Args).Show();
+        new MainWin().Show();
     }
 
     private void App_DispatcherUnhandledException(object sender, DispatcherUnhandledExceptionEventArgs e)

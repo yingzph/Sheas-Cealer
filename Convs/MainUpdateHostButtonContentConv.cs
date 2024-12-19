@@ -5,13 +5,13 @@ using System.Windows.Data;
 
 namespace Sheas_Cealer.Convs;
 
-internal class MainNginxButtonToolTipConv : IValueConverter
+internal class MainUpdateHostButtonContentConv : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
-        bool isNginxRunning = (bool)value;
+        bool isUpstreamHostUtd = (bool)value;
 
-        return isNginxRunning ? MainConst.NginxButtonIsRunningToolTip : MainConst.NginxButtonIsStoppedToolTip;
+        return MainConst.UpdateUpstreamHostButtonContent + (isUpstreamHostUtd ? string.Empty : " *");
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture) => throw new NotImplementedException();

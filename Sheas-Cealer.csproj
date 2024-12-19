@@ -56,6 +56,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove=".filenesting.json" />
     <None Remove=".gitattributes" />
     <None Remove=".gitignore" />
     <None Remove="README.md" />
@@ -75,7 +76,7 @@
       <HintPath>..\Ona-Core\bin\Release\net8.0-windows10.0.26100.0\Ona-Core.dll</HintPath>
     </Reference>
     <Reference Include="Sheas-Core">
-      <HintPath>..\Sheas-Core\bin\Release\Sheas-Core.dll</HintPath>
+      <HintPath>..\Sheas-Core\bin\Release\net8.0-windows10.0.26100.0\Sheas-Core.dll</HintPath>
     </Reference>
   </ItemGroup>
 

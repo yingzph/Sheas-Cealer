@@ -1,10 +1,10 @@
-﻿using System.Diagnostics;
-using System.Windows;
-using System.Windows.Media;
-using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
 using MaterialDesignThemes.Wpf;
 using Sheas_Cealer.Props;
 using Sheas_Cealer.Utils;
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Media;
 
 namespace Sheas_Cealer.Preses;
 
@@ -39,5 +39,5 @@ internal partial class GlobalPres : ObservableObject
     }
 
     [ObservableProperty]
-    private static Color accentForegroundColor = (Color)ColorConverter.ConvertFromString("#2196f3");
+    private static Color accentForegroundColor = (Color)ColorConverter.ConvertFromString("#2196F3");
 }

@@ -1,13 +1,13 @@
-﻿using System;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Input;
-using System.Windows.Media;
-using MaterialDesignThemes.Wpf;
+﻿using MaterialDesignThemes.Wpf;
 using Sheas_Cealer.Consts;
 using Sheas_Cealer.Preses;
 using Sheas_Cealer.Props;
 using Sheas_Cealer.Utils;
+using System;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Input;
+using System.Windows.Media;
 
 namespace Sheas_Cealer.Wins;
 
@@ -21,7 +21,7 @@ public partial class SettingsWin : Window
 
         DataContext = SettingsPres = new();
     }
-    protected override void OnSourceInitialized(EventArgs e)
+    private void SettingsWin_SourceInitialized(object sender, EventArgs e)
     {
         IconRemover.RemoveIcon(this);
         BorderThemeSetter.SetBorderTheme(this, SettingsPres.IsLightTheme);
