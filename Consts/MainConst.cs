@@ -9,7 +9,7 @@ namespace Sheas_Cealer.Consts;
 internal abstract partial class MainConst : MainMultilangConst
 {
     internal enum SettingsMode
-    { BrowserPathMode, UpstreamUrlMode, ExtraArgsMode };
+    { BrowserPathMode, UpstreamUrlMode, ExtraArgsMode }
 
     public static bool IsAdmin => new WindowsPrincipal(WindowsIdentity.GetCurrent()).IsInRole(WindowsBuiltInRole.Administrator);
 
@@ -26,6 +26,7 @@ internal abstract partial class MainConst : MainMultilangConst
     internal static string HostsConfStartMarker => $"# Cealing Nginx Start{Environment.NewLine}";
     internal static string HostsConfEndMarker => "# Cealing Nginx End";
 
+    internal static string ConginxPath => Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase!, "Cealing-Conginx.exe");
     internal static string NginxPath => Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase!, "Cealing-Nginx.exe");
     internal static string NginxConfPath => Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase!, "nginx.conf");
     internal static string NginxLogsPath => Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase!, "logs");
@@ -36,9 +37,12 @@ internal abstract partial class MainConst : MainMultilangConst
     internal static string NginxRootCertSubjectName => "CN=Cealing Cert Root";
     internal static string NginxChildCertSubjectName => "CN=Cealing Cert Child";
 
+    internal static string ComihomoPath => Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase!, "Cealing-Comihomo.exe");
     internal static string MihomoPath => Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase!, "Cealing-Mihomo.exe");
     internal static string MihomoConfPath => Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase!, "config.yaml");
     internal static string[] MihomoNameServers => ["https://doh.apad.pro/dns-query", "https://ns.net.kg/dns-query"];
+
+    internal static string NotifyIconText => "Sheas Cealer";
 
     [GeneratedRegex(@"^(https?:\/\/)?[a-zA-Z0-9](-*[a-zA-Z0-9])*(\.[a-zA-Z0-9](-*[a-zA-Z0-9])*)*(:\d{1,5})?(\/[a-zA-Z0-9.\-_\~\!\$\&\'\(\)\*\+\,\;\=\:\@\%]*)*$")]
     internal static partial Regex UpstreamUrlRegex();

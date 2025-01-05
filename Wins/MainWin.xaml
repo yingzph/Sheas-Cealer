@@ -64,47 +64,66 @@
 
             <Button IsDefault="True"
                     Grid.Column="0" Margin="5"
-                    Content="{x:Static consts:MainConst.StartButtonContent}"
-                    ToolTip="{x:Static consts:MainConst.StartButtonToolTip}"
-                    Click="StartButton_Click" PreviewMouseDown="StartButton_PreviewMouseDown">
+                    Content="{x:Static consts:MainConst.BrowserButtonContent}"
+                    ToolTip="{x:Static consts:MainConst.BrowserButtonToolTip}"
+                    Click="LaunchButton_Click" PreviewMouseDown="LaunchButton_PreviewMouseDown">
                 <Button.IsEnabled>
-                    <MultiBinding Converter="{x:Static convs:MainConv.MainStartButtonIsEnabledConv}">
+                    <MultiBinding Converter="{x:Static convs:MainConv.MainBrowserButtonIsEnabledConv}">
                         <Binding Path="BrowserPath" />
                         <Binding Path="ExtraArgs" />
                     </MultiBinding>
                 </Button.IsEnabled>
             </Button>
-            <Button Grid.Column="1" Margin="5" d:Content="# # # #"
+            <Button x:Name="NginxButton"
+                    Grid.Column="1" Margin="5" d:Content="# # # #"
                     Visibility="{Binding Source={x:Static consts:MainConst.IsAdmin}, Converter={x:Static convs:MainConv.MainAdminControlVisibilityConv}}"
-                    ToolTip="{Binding IsNginxRunning, Converter={x:Static convs:MainConv.MainNginxButtonToolTipConv}}"
-                    Click="NginxButton_Click" PreviewMouseDown="NginxButton_PreviewMouseDown">
+                    Click="LaunchButton_Click" PreviewMouseDown="LaunchButton_PreviewMouseDown">
                 <Button.IsEnabled>
-                    <MultiBinding Converter="{x:Static convs:MainConv.MainProxyButtonIsEnabledConv}">
+                    <MultiBinding Converter="{x:Static convs:MainConv.MainNginxButtonIsEnabledConv}">
+                        <Binding Path="IsConginxExist" />
                         <Binding Path="IsNginxExist" />
+                        <Binding Path="IsCoproxyIniting" />
                         <Binding Path="IsNginxIniting" />
+                        <Binding Path="IsComihomoIniting" />
+                        <Binding Path="IsMihomoIniting" />
                     </MultiBinding>
                 </Button.IsEnabled>
                 <Button.Content>
                     <MultiBinding Converter="{x:Static convs:MainConv.MainNginxButtonContentConv}">
+                        <Binding Path="IsConginxRunning" />
                         <Binding Path="IsNginxRunning" />
+                        <Binding Path="IsCoproxyIniting" />
                         <Binding Path="IsNginxIniting" />
                     </MultiBinding>
                 </Button.Content>
+                <Button.ToolTip>
+                    <MultiBinding Converter="{x:Static convs:MainConv.MainNginxButtonToolTipConv}">
+                        <Binding Path="IsConginxRunning" />
+                        <Binding Path="IsNginxRunning" />
+                    </MultiBinding>
+                </Button.ToolTip>
             </Button>
-            <Button Grid.Column="2" Margin="5" d:Content="# # # #"
+            <Button x:Name="MihomoButton"
+                    Grid.Column="2" Margin="5" d:Content="# # # #"
                     Visibility="{Binding Source={x:Static consts:MainConst.IsAdmin}, Converter={x:Static convs:MainConv.MainAdminControlVisibilityConv}}"
                     ToolTip="{Binding IsMihomoRunning, Converter={x:Static convs:MainConv.MainMihomoButtonToolTipConv}}"
-                    Click="MihomoButton_Click" PreviewMouseDown="MihomoButton_PreviewMouseDown">
+                    Click="LaunchButton_Click" PreviewMouseDown="LaunchButton_PreviewMouseDown">
                 <Button.IsEnabled>
-                    <MultiBinding Converter="{x:Static convs:MainConv.MainProxyButtonIsEnabledConv}">
+                    <MultiBinding Converter="{x:Static convs:MainConv.MainMihomoButtonIsEnabledConv}">
+                        <Binding Path="IsComihomoExist" />
                         <Binding Path="IsMihomoExist" />
+                        <Binding Path="IsCoproxyIniting" />
+                        <Binding Path="IsComihomoIniting" />
                         <Binding Path="IsMihomoIniting" />
                     </MultiBinding>
                 </Button.IsEnabled>
                 <Button.Content>
                     <MultiBinding Converter="{x:Static convs:MainConv.MainMihomoButtonContentConv}">
                         <Binding Path="IsMihomoRunning" />
+                        <Binding Path="IsComihomoIniting" />
                         <Binding Path="IsMihomoIniting" />
+                        <Binding Path="IsCoproxyIniting" />
+                        <Binding Path="IsCoproxyStopping" />
                     </MultiBinding>
                 </Button.Content>
             </Button>
@@ -133,9 +152,13 @@
                     ToolTip="{x:Static consts:MainConst.EditNginxConfButtonToolTip}"
                     Click="EditConfButton_Click">
                 <Button.IsEnabled>
-                    <MultiBinding Converter="{x:Static convs:MainConv.MainProxyButtonIsEnabledConv}">
+                    <MultiBinding Converter="{x:Static convs:MainConv.MainNginxButtonIsEnabledConv}">
+                        <Binding Path="IsConginxExist" />
                         <Binding Path="IsNginxExist" />
+                        <Binding Path="IsCoproxyIniting" />
                         <Binding Path="IsNginxIniting" />
+                        <Binding Path="IsComihomoIniting" />
+                        <Binding Path="IsMihomoIniting" />
                     </MultiBinding>
                 </Button.IsEnabled>
             </Button>
@@ -145,8 +168,11 @@
                     ToolTip="{x:Static consts:MainConst.EditMihomoConfButtonToolTip}"
                     Click="EditConfButton_Click">
                 <Button.IsEnabled>
-                    <MultiBinding Converter="{x:Static convs:MainConv.MainProxyButtonIsEnabledConv}">
+                    <MultiBinding Converter="{x:Static convs:MainConv.MainMihomoButtonIsEnabledConv}">
+                        <Binding Path="IsComihomoExist" />
                         <Binding Path="IsMihomoExist" />
+                        <Binding Path="IsCoproxyIniting" />
+                        <Binding Path="IsComihomoIniting" />
                         <Binding Path="IsMihomoIniting" />
                     </MultiBinding>
                 </Button.IsEnabled>

@@ -151,6 +151,15 @@ namespace Sheas_Cealer.Consts {
         }
         
         /// <summary>
+        ///   查找类似 You are using hosts-based non-wildcard domain global cealing. Do you want to continue? 的本地化字符串。
+        /// </summary>
+        public static string _LaunchHostsNginxPrompt {
+            get {
+                return ResourceManager.GetString("_LaunchHostsNginxPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Mihomo failed to launch 的本地化字符串。
         /// </summary>
         public static string _LaunchMihomoErrorMsg {
@@ -255,6 +264,42 @@ namespace Sheas_Cealer.Consts {
         public static string AboutButtonToolTip {
             get {
                 return ResourceManager.GetString("AboutButtonToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Start Cealing 的本地化字符串。
+        /// </summary>
+        public static string BrowserButtonContent {
+            get {
+                return ResourceManager.GetString("BrowserButtonContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Click to launch the injected browser 的本地化字符串。
+        /// </summary>
+        public static string BrowserButtonToolTip {
+            get {
+                return ResourceManager.GetString("BrowserButtonToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 GLB. Purging CHA. 的本地化字符串。
+        /// </summary>
+        public static string ComihomoButtonIsInitingContent {
+            get {
+                return ResourceManager.GetString("ComihomoButtonIsInitingContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 GLB. Cealing INIT. 的本地化字符串。
+        /// </summary>
+        public static string ConginxButtonIsInitingContent {
+            get {
+                return ResourceManager.GetString("ConginxButtonIsInitingContent", resourceCulture);
             }
         }
         
@@ -390,6 +435,15 @@ namespace Sheas_Cealer.Consts {
         public static string MihomoButtonIsStoppedToolTip {
             get {
                 return ResourceManager.GetString("MihomoButtonIsStoppedToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 GLB. Purging STP. 的本地化字符串。
+        /// </summary>
+        public static string MihomoButtonIsStoppingContent {
+            get {
+                return ResourceManager.GetString("MihomoButtonIsStoppingContent", resourceCulture);
             }
         }
         
@@ -588,24 +642,6 @@ namespace Sheas_Cealer.Consts {
         public static string SettingsModeButtonUpstreamUrlContent {
             get {
                 return ResourceManager.GetString("SettingsModeButtonUpstreamUrlContent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Start Cealing 的本地化字符串。
-        /// </summary>
-        public static string StartButtonContent {
-            get {
-                return ResourceManager.GetString("StartButtonContent", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Click to launch the injected browser 的本地化字符串。
-        /// </summary>
-        public static string StartButtonToolTip {
-            get {
-                return ResourceManager.GetString("StartButtonToolTip", resourceCulture);
             }
         }
         

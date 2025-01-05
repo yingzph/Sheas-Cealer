@@ -123,8 +123,17 @@
   <data name="AboutButtonToolTip" xml:space="preserve">
     <value>Click to open the about window</value>
   </data>
-  <data name="SettingsModeButtonBrowserPathContent" xml:space="preserve">
-    <value>Browser Path</value>
+  <data name="BrowserButtonContent" xml:space="preserve">
+    <value>Start Cealing</value>
+  </data>
+  <data name="BrowserButtonToolTip" xml:space="preserve">
+    <value>Click to launch the injected browser</value>
+  </data>
+  <data name="ComihomoButtonIsInitingContent" xml:space="preserve">
+    <value>GLB. Purging CHA.</value>
+  </data>
+  <data name="ConginxButtonIsInitingContent" xml:space="preserve">
+    <value>GLB. Cealing INIT.</value>
   </data>
   <data name="EditHostsConfButtonContent" xml:space="preserve">
     <value>Edit Hosts Conf</value>
@@ -156,9 +165,6 @@
   <data name="EditUpstreamHostButtonToolTip" xml:space="preserve">
     <value>Click to edit upstream host</value>
   </data>
-  <data name="SettingsModeButtonExtraArgsContent" xml:space="preserve">
-    <value>Extra Args</value>
-  </data>
   <data name="MihomoButtonIsInitingContent" xml:space="preserve">
     <value>GLB. Purging INIT.</value>
   </data>
@@ -173,6 +179,9 @@
   </data>
   <data name="MihomoButtonIsStoppedToolTip" xml:space="preserve">
     <value>Click to launch a local Mihomo</value>
+  </data>
+  <data name="MihomoButtonIsStoppingContent" xml:space="preserve">
+    <value>GLB. Purging STP.</value>
   </data>
   <data name="NginxButtonIsInitingContent" xml:space="preserve">
     <value>GLB. Cealing INIT.</value>
@@ -228,23 +237,23 @@
   <data name="SettingsFunctionButtonUpstreamUrlContent" xml:space="preserve">
     <value>Reset URL</value>
   </data>
+  <data name="SettingsModeButtonBrowserPathContent" xml:space="preserve">
+    <value>Browser Path</value>
+  </data>
+  <data name="SettingsModeButtonExtraArgsContent" xml:space="preserve">
+    <value>Extra Args</value>
+  </data>
   <data name="SettingsModeButtonToolTip" xml:space="preserve">
     <value>Click to switch settings</value>
   </data>
-  <data name="StartButtonContent" xml:space="preserve">
-    <value>Start Cealing</value>
-  </data>
-  <data name="StartButtonToolTip" xml:space="preserve">
-    <value>Click to launch the injected browser</value>
+  <data name="SettingsModeButtonUpstreamUrlContent" xml:space="preserve">
+    <value>Upstream URL</value>
   </data>
   <data name="UpdateUpstreamHostButtonContent" xml:space="preserve">
     <value>Update Upstream Host</value>
   </data>
   <data name="UpdateUpstreamHostButtonToolTip" xml:space="preserve">
     <value>Click to update upstream host</value>
-  </data>
-  <data name="SettingsModeButtonUpstreamUrlContent" xml:space="preserve">
-    <value>Upstream URL</value>
   </data>
   <data name="_BrowserPathDialogFilterFileType" xml:space="preserve">
     <value>Browser</value>
@@ -275,6 +284,9 @@
   </data>
   <data name="_KillBrowserProcessPrompt" xml:space="preserve">
     <value>All processes of the selected browser will be closed before launching. Do you want to continue?</value>
+  </data>
+  <data name="_LaunchHostsNginxPrompt" xml:space="preserve">
+    <value>You are using hosts-based non-wildcard domain global cealing. Do you want to continue?</value>
   </data>
   <data name="_LaunchMihomoErrorMsg" xml:space="preserve">
     <value>Mihomo failed to launch</value>

@@ -12,10 +12,10 @@ internal class BrowserProc : Proc
     {
         ShutDownAppOnProcessExit = shutDownAppOnProcessExit;
 
-        Process_Exited(null!, null!);
+        Process_Exited(null, EventArgs.Empty);
     }
 
-    protected sealed override void Process_Exited(object sender, EventArgs e)
+    protected sealed override void Process_Exited(object? sender, EventArgs e)
     {
         if (ShutDownAppOnProcessExit)
             Application.Current.Dispatcher.InvokeShutdown();

@@ -5,9 +5,9 @@ using System;
 
 namespace Sheas_Cealer.Proces;
 
-internal class NginxProc : Proc
+internal class ConginxProc : Proc
 {
-    internal NginxProc() : base(MainConst.NginxPath) { }
+    internal ConginxProc() : base(MainConst.ConginxPath) { }
 
     protected override async void Process_Exited(object? sender, EventArgs e) => await NginxCleaner.Clean();
 }
