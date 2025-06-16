@@ -185,7 +185,7 @@ public partial class MainWin : Window
     {
         HoldButtonTimer?.Stop();
 
-        if ((CealHostRulesDict.ContainsValue(null!) && MessageBox.Show(MainConst._CealHostErrorPrompt, string.Empty, MessageBoxButton.YesNo) != MessageBoxResult.Yes) ||
+        if ((CealHostRulesDict.ContainsValue(null) && MessageBox.Show(MainConst._CealHostErrorPrompt, string.Empty, MessageBoxButton.YesNo) != MessageBoxResult.Yes) ||
             (sender is not true && MessageBox.Show(MainConst._KillBrowserProcessPrompt, string.Empty, MessageBoxButton.YesNo) != MessageBoxResult.Yes))
             return;
 
@@ -206,9 +206,6 @@ public partial class MainWin : Window
 
         if (!MainPres.IsConginxRunning && !MainPres.IsNginxRunning)
         {
-            if (NginxCleaner.IsNginxCleaningSemaphore.CurrentCount == 0 || !await IsNginxLaunchingSemaphore.WaitAsync(0))
-                return;
-
             try
             {
                 if ((!MainPres.IsConginxExist && !MainPres.IsNginxExist) ||
@@ -238,7 +235,7 @@ public partial class MainWin : Window
                 rootCertRequest.CertificateExtensions.Add(new X509BasicConstraintsExtension(true, false, 0, false));
 
                 using X509Certificate2 rootCert = rootCertRequest.CreateSelfSigned(DateTimeOffset.UtcNow, DateTimeOffset.UtcNow.AddYears(100));
-                using X509Store certStore = new(StoreName.Root, StoreLocation.CurrentUser, OpenFlags.ReadWrite);
+                using X509Store certStore = new(StoreName.Root, StoreLocation.LocalMachine, OpenFlags.ReadWrite);
 
                 certStore.Add(rootCert);
                 certStore.Close();
@@ -690,7 +687,7 @@ public partial class MainWin : Window
     }
     private async void CealHostWatcher_Changed(object sender, FileSystemEventArgs e)
     {
-        string cealHostName = e.Name!.TrimStart("Cealing-Host-".ToCharArray()).TrimEnd(".json".ToCharArray());
+        string cealHostName = MainConst.CealHostPrefixRegex().Replace(Path.GetFileNameWithoutExtension(e.Name!), string.Empty);
 
         try
         {
